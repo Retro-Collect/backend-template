@@ -98,6 +98,9 @@ return [
             "with" => [
                 "stream" => "php://stderr",
             ],
+            "tap" => [
+                \App\Support\LogInjector::class,
+            ],
         ],
 
         "syslog" => [
