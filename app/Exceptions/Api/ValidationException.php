@@ -17,6 +17,6 @@ class ValidationException extends ExceptionAbstract
     {
         /** @var \Illuminate\Validation\ValidationException $errors */
         $errors = $this->exception;
-        $this->message = json_encode($errors->errors());
+        $this->message = $errors->getMessage();
     }
 }

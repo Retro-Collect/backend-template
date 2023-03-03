@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\User\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware("auth:sanctum")->get("/user", fn(Request $request) => $request->user());
+
+Route::prefix("v1")->group(function (): void {
+    Route::controller(UserController::class)->group(function (): void {
+        Route::get("/user/{id}", "findUserId");
+    });
+});

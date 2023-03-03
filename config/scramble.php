@@ -10,7 +10,7 @@ return [
      */
     "api_path" => "api",
 
-    "api_domain" => env("APP_URL", "http://localhost"),
+    "api_domain" => null,
 
     "info" => [
         /*
@@ -25,8 +25,7 @@ return [
     ],
 
     "servers" => [
-        "Local" => "api",
-        "Prod" => env("APP_URL", "http://localhost"),
+        "Prod" => env("ASSET_URL", "http://localhost" . "/api"),
     ],
 
     "middleware" => [
